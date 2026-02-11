@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "name": "Weekly Rehab + Half-Marathon Base Plan",
+    "version": 2,
+    "notes": "6 workouts (Tuesday-Sunday) tailored for right hip flexor rehab, right ankle stability, posture-related shoulder pain, and low-back spondylolisthesis precautions."
+  },
+  "workouts": [
+    {
+      "id": "week1_day1_easy_run_plus_prehab",
+      "title": "Easy Run and Prehab",
+      "description": "Day 1 (Tuesday): easy aerobic run with hip, ankle, and cooldown support.",
+      "rounds": 1,
+      "default_rest_seconds": 30,
+      "exercises": [
+        {
+          "name": "Dynamic Warm-Up Walk",
+          "work_seconds": 360,
+          "rest_seconds": 20,
+          "reps": "6 min",
+          "instructions": [
+            "Start with brisk walking and relaxed arm swing.",
+            "Keep posture tall with ribs stacked over pelvis.",
+            "Add gentle marching and ankle circles while moving.",
+            "Avoid sudden speed changes in the first minutes."
+          ]
+        },
+        {
+          "name": "Easy Conversation Run",
+          "work_seconds": 1200,
+          "rest_seconds": 45,
+          "reps": "20 min",
+          "instructions": [
+            "Run at conversational pace where breathing stays controlled.",
+            "Take short, quick steps and avoid overstriding.",
+            "Keep hips level and trunk steady to reduce hip flexor load.",
+            "Switch to run-walk if pain exceeds 3/10."
+          ]
+        },
+        {
+          "name": "Band Ankle Eversion",
+          "work_seconds": 60,
+          "rest_seconds": 20,
+          "reps": "12 per side",
+          "instructions": [
+            "Sit with band around forefoot and anchor the other end inward.",
+            "Turn foot outward against band slowly and with control.",
+            "Keep knee still and movement isolated to ankle.",
+            "Use light resistance with no sharp pain."
+          ]
+        },
+        {
+          "name": "Hip Flexor Isometric Lift-Off",
+          "work_seconds": 45,
+          "rest_seconds": 20,
+          "reps": "6 per side",
+          "instructions": [
+            "Stand tall and lift one knee to a pain-free height.",
+            "Hold 2-3 seconds while bracing core gently.",
+            "Keep pelvis level and avoid trunk leaning.",
+            "Stop if deep groin pain or pinching appears."
+          ]
+        },
+        {
+          "name": "Cooldown Walk and Breathing",
+          "work_seconds": 360,
+          "reps": "6 min",
+          "instructions": [
+            "Walk slowly to bring heart rate down gradually.",
+            "Inhale through nose and exhale longer than inhale.",
+            "Keep shoulders relaxed and jaw unclenched.",
+            "Finish feeling recovered, not abruptly stopped."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1_day2_strength_foundation_a",
+      "title": "Strength Foundation A",
+      "description": "Day 2 (Wednesday): full-body strength with low-back-safe bracing.",
+      "rounds": 3,
+      "default_rest_seconds": 50,
+      "exercises": [
+        {
+          "name": "Goblet Squat to Bench",
+          "work_seconds": 45,
+          "reps": "8-10",
+          "instructions": [
+            "Hold dumbbell at chest and stand shoulder-width.",
+            "Sit back to bench with controlled descent.",
+            "Drive through full foot to stand without spinal extension.",
+            "Stay in pain-free depth for hip and back."
+          ]
+        },
+        {
+          "name": "Dumbbell Floor Press (Neutral Grip)",
+          "work_seconds": 45,
+          "reps": "10-12",
+          "instructions": [
+            "Lie on floor with knees bent and dumbbells neutral grip.",
+            "Lower until triceps touch floor lightly, then press.",
+            "Keep shoulder blades gently set and neck relaxed.",
+            "Do not flare elbows aggressively."
+          ]
+        },
+        {
+          "name": "Chest-Supported Dumbbell Row",
+          "work_seconds": 45,
+          "reps": "10-12",
+          "instructions": [
+            "Set bench incline and support chest to unload low back.",
+            "Row elbows toward hips while keeping shoulders down.",
+            "Pause briefly at top and lower with control.",
+            "Avoid shrugging or neck jutting forward."
+          ]
+        },
+        {
+          "name": "Romanian Deadlift",
+          "work_seconds": 40,
+          "reps": "8-10",
+          "instructions": [
+            "Hold dumbbells close and hinge at hips with soft knees.",
+            "Keep spine neutral and ribs stacked over pelvis.",
+            "Stand by squeezing glutes, not arching low back.",
+            "Stop before range causes back rounding."
+          ]
+        },
+        {
+          "name": "Pallof Press",
+          "work_seconds": 40,
+          "reps": "10 per side",
+          "instructions": [
+            "Anchor band at chest height and stand side-on.",
+            "Press hands forward while resisting trunk rotation.",
+            "Keep glutes and abs lightly braced.",
+            "Use smooth tempo and no twisting."
+          ]
+        },
+        {
+          "name": "Side Plank (Knees if Needed)",
+          "work_seconds": 30,
+          "reps": "20-30 sec per side",
+          "instructions": [
+            "Place elbow under shoulder and align head to knees/feet.",
+            "Lift hips and hold steady breathing.",
+            "Keep shoulder away from ear.",
+            "Use knee-supported version when form slips."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1_day3_mobility_and_stability",
+      "title": "Mobility and Stability Reset",
+      "description": "Day 3 (Thursday): recovery cardio, posture work, and joint stability.",
+      "rounds": 2,
+      "default_rest_seconds": 30,
+      "exercises": [
+        {
+          "name": "Brisk Walk or Easy Bike",
+          "work_seconds": 600,
+          "rest_seconds": 30,
+          "reps": "10 min",
+          "instructions": [
+            "Move at low-to-moderate effort and breathe comfortably.",
+            "Keep rhythm smooth and avoid intensity spikes.",
+            "Maintain tall posture with relaxed shoulders.",
+            "This should feel restorative, not draining."
+          ]
+        },
+        {
+          "name": "Single-Leg Balance with Reach",
+          "work_seconds": 45,
+          "rest_seconds": 20,
+          "reps": "5 reaches per side",
+          "instructions": [
+            "Stand on one leg with slight knee bend.",
+            "Reach opposite foot forward and slightly diagonal.",
+            "Keep knee aligned over toes and control ankle wobble.",
+            "Use wall support if needed for quality reps."
+          ]
+        },
+        {
+          "name": "Calf Raise plus Tibialis Raise",
+          "work_seconds": 50,
+          "rest_seconds": 20,
+          "reps": "12 each",
+          "instructions": [
+            "Perform slow calf raises through full controlled range.",
+            "Then lift forefoot/toes for tibialis raises against wall.",
+            "Keep movement deliberate and avoid bouncing.",
+            "Stop short of cramping or tendon irritation."
+          ]
+        },
+        {
+          "name": "Wall Slide with Chin Tuck",
+          "work_seconds": 45,
+          "rest_seconds": 20,
+          "reps": "8-10",
+          "instructions": [
+            "Stand with back against wall and slight chin tuck.",
+            "Slide forearms upward while keeping ribs down.",
+            "Move only in pain-free shoulder range.",
+            "Focus on upper-back activation, not neck tension."
+          ]
+        },
+        {
+          "name": "Bird Dog",
+          "work_seconds": 45,
+          "reps": "6 per side",
+          "instructions": [
+            "Start on hands and knees with neutral spine.",
+            "Extend opposite arm and leg without rotating hips.",
+            "Pause briefly, then return with control.",
+            "Keep low back stable and avoid sagging."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1_day4_run_walk_intervals",
+      "title": "Run-Walk Intervals",
+      "description": "Day 4 (Friday): controlled interval session for half-marathon base.",
+      "rounds": 1,
+      "default_rest_seconds": 25,
+      "exercises": [
+        {
+          "name": "Warm-Up Walk to Easy Jog",
+          "work_seconds": 480,
+          "rest_seconds": 20,
+          "reps": "8 min",
+          "instructions": [
+            "Begin walking, then gradually transition to very easy jog.",
+            "Keep cadence light and posture tall.",
+            "Prime ankles and hips with smooth relaxed steps.",
+            "Do not start intervals until fully warm."
+          ]
+        },
+        {
+          "name": "Run Interval 1",
+          "work_seconds": 180,
+          "rest_seconds": 15,
+          "reps": "3 min",
+          "instructions": [
+            "Run at steady easy-moderate effort.",
+            "Use short stride and maintain hip stability.",
+            "Relax shoulders and keep jaw unclenched.",
+            "Back off if pain or form breakdown starts."
+          ]
+        },
+        {
+          "name": "Walk Recovery 1",
+          "work_seconds": 120,
+          "rest_seconds": 15,
+          "reps": "2 min",
+          "instructions": [
+            "Walk briskly to recover breathing.",
+            "Keep movement smooth and upright.",
+            "Reset technique cues for the next interval.",
+            "Avoid standing still."
+          ]
+        },
+        {
+          "name": "Run Interval 2",
+          "work_seconds": 180,
+          "rest_seconds": 15,
+          "reps": "3 min",
+          "instructions": [
+            "Repeat the same controlled pace as interval 1.",
+            "Land softly under center of mass.",
+            "Maintain steady arm swing close to torso.",
+            "Reduce speed if hip flexor discomfort rises."
+          ]
+        },
+        {
+          "name": "Walk Recovery 2",
+          "work_seconds": 120,
+          "rest_seconds": 15,
+          "reps": "2 min",
+          "instructions": [
+            "Walk with purpose and deep controlled breathing.",
+            "Keep shoulders low and relaxed.",
+            "Let heart rate come down before next run.",
+            "Stay consistent rather than rushing."
+          ]
+        },
+        {
+          "name": "Run Interval 3",
+          "work_seconds": 180,
+          "rest_seconds": 15,
+          "reps": "3 min",
+          "instructions": [
+            "Run smooth and controlled, not all-out.",
+            "Keep trunk quiet and steps quick.",
+            "Aim for even effort from start to finish.",
+            "If symptoms flare, convert to brisk walk."
+          ]
+        },
+        {
+          "name": "Walk Recovery 3",
+          "work_seconds": 120,
+          "rest_seconds": 20,
+          "reps": "2 min",
+          "instructions": [
+            "Walk and recover before cooldown.",
+            "Allow breathing to normalize.",
+            "Keep body tall and relaxed.",
+            "Use this as transition into cooldown."
+          ]
+        },
+        {
+          "name": "Cooldown Walk",
+          "work_seconds": 360,
+          "reps": "6 min",
+          "instructions": [
+            "Walk easy and lower effort gradually.",
+            "Use long exhales to calm the system.",
+            "Finish with no abrupt stop.",
+            "Note any pain points for next session planning."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1_day5_strength_foundation_b",
+      "title": "Strength Foundation B",
+      "description": "Day 5 (Saturday): muscle-focused strength with posture and core emphasis.",
+      "rounds": 3,
+      "default_rest_seconds": 50,
+      "exercises": [
+        {
+          "name": "Low Box Step-Up",
+          "work_seconds": 40,
+          "reps": "8-10 per side",
+          "instructions": [
+            "Use a step height you can control without hip pinch.",
+            "Drive through full front foot to stand.",
+            "Descend slowly and keep knee aligned over toes.",
+            "Hold support lightly if ankle feels unstable."
+          ]
+        },
+        {
+          "name": "Incline Push-Up",
+          "work_seconds": 40,
+          "reps": "10-12",
+          "instructions": [
+            "Hands on bench or counter, body in straight line.",
+            "Lower chest between hands with elbows at 30-45 degrees.",
+            "Press up while keeping neck neutral.",
+            "Adjust incline to stay pain free in shoulder."
+          ]
+        },
+        {
+          "name": "One-Arm Dumbbell Row",
+          "work_seconds": 45,
+          "reps": "10-12 per side",
+          "instructions": [
+            "Support one hand on bench and brace core.",
+            "Pull elbow toward hip without trunk rotation.",
+            "Control the lowering phase.",
+            "Avoid upper-trap shrugging."
+          ]
+        },
+        {
+          "name": "Supported Split Squat",
+          "work_seconds": 40,
+          "reps": "8 per side",
+          "instructions": [
+            "Use wall or chair support for balance.",
+            "Drop straight down in a pain-free range.",
+            "Keep front knee stacked over foot and pelvis level.",
+            "Limit depth if hip flexor feels irritated."
+          ]
+        },
+        {
+          "name": "Band Pull-Apart",
+          "work_seconds": 35,
+          "reps": "12-15",
+          "instructions": [
+            "Hold band at shoulder height with soft elbows.",
+            "Pull apart by squeezing shoulder blades together.",
+            "Keep ribs down and neck long.",
+            "Use lighter band if movement causes neck pain."
+          ]
+        },
+        {
+          "name": "Dead Bug",
+          "work_seconds": 40,
+          "reps": "8 per side",
+          "instructions": [
+            "Lie on back with knees and hips at 90 degrees.",
+            "Press low back gently into floor before each rep.",
+            "Extend opposite arm and leg slowly.",
+            "Stop if low back lifts off floor."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "week1_day6_long_easy_run_progression",
+      "title": "Long Easy Run Progression",
+      "description": "Day 6 (Sunday): longer aerobic session for half-marathon preparation.",
+      "rounds": 1,
+      "default_rest_seconds": 30,
+      "exercises": [
+        {
+          "name": "Dynamic Warm-Up Walk",
+          "work_seconds": 360,
+          "rest_seconds": 20,
+          "reps": "6 min",
+          "instructions": [
+            "Walk briskly and gradually increase cadence.",
+            "Keep posture tall and core lightly engaged.",
+            "Add gentle hip circles and ankle mobilization while moving.",
+            "Avoid static stretching before the run block."
+          ]
+        },
+        {
+          "name": "Long Easy Run or Run-Walk",
+          "work_seconds": 1800,
+          "rest_seconds": 45,
+          "reps": "30 min",
+          "instructions": [
+            "Target easy zone effort, not speed.",
+            "If needed, use 4 min run and 1 min walk cycles.",
+            "Keep stride compact to protect hip flexor and low back.",
+            "End early if gait becomes unstable or painful."
+          ]
+        },
+        {
+          "name": "Cooldown Walk",
+          "work_seconds": 360,
+          "rest_seconds": 20,
+          "reps": "6 min",
+          "instructions": [
+            "Walk slowly to transition out of effort.",
+            "Let breathing settle with long exhales.",
+            "Maintain relaxed shoulders and gentle arm swing.",
+            "Do not sit immediately after finishing."
+          ]
+        },
+        {
+          "name": "Post-Run Mobility (Calf and Hip Flexor)",
+          "work_seconds": 240,
+          "reps": "2 min each side",
+          "instructions": [
+            "Perform gentle calf stretch with heel grounded.",
+            "Use half-kneeling hip flexor stretch with glute squeeze.",
+            "Keep pelvis neutral and avoid back arching.",
+            "Stay in mild stretch range without sharp pain."
+          ]
+        }
+      ]
+    }
+  ]
+}
