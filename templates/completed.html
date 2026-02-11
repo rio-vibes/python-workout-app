@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Completed Workouts | VibeCode{% endblock %}
 {% block content %}
-<main class="completed-layout">
-  <section class="card completed-card">
+<main class="completed-layout" data-testid="completed-layout">
+  <section class="card completed-card" data-testid="completed-card">
     <div class="card-header">
       <h2>Completed Workouts</h2>
-      <button id="refreshCompletedBtn" class="btn secondary">Refresh</button>
+      <button id="refreshCompletedBtn" class="btn secondary" data-testid="refresh-completed-btn">Refresh</button>
     </div>
-    <p id="completedCount" class="small-note"></p>
-    <div class="table-wrap">
-      <table class="history-table">
+    <p id="completedCount" class="small-note" data-testid="completed-count"></p>
+    <div class="table-wrap" data-testid="completed-table-wrap">
+      <table class="history-table" data-testid="completed-table">
         <thead>
           <tr>
             <th>Day</th>
@@ -19,7 +19,7 @@
             <th>Completed At</th>
           </tr>
         </thead>
-        <tbody id="completedTableBody"></tbody>
+        <tbody id="completedTableBody" data-testid="completed-table-body"></tbody>
       </table>
     </div>
   </section>

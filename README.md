@@ -17,8 +17,7 @@ Local browser-based workout app with a Python backend.
 ## Setup and Run
 
 ```bash
-git clone git@github.com:rio-vibes/python-workout-app.git
-cd python-workout-app
+cd /Users/rioneldmello/Desktop/VibeCode/python-workout-app
 python3 -m pip install -r requirements.txt
 python3 web_app.py
 ```
@@ -36,7 +35,22 @@ Open `http://127.0.0.1:8000` in your browser.
 - Active workouts: `workouts.json`
 - Completed workouts: `completed_workouts.json`
 - Web server entrypoint: `web_app.py`
-- Original CLI app: `app.py`
+
+## Tests
+
+Install test dependencies and run the suite:
+
+```bash
+python3 -m pip install -r requirements.txt -r requirements-dev.txt
+python3 -m playwright install chromium
+pytest -q
+```
+
+Or use:
+
+```bash
+./scripts/test.sh
+```
 
 ## Workout JSON Requirements
 

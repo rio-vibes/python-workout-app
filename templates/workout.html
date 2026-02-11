@@ -1,68 +1,68 @@
 {% extends "base.html" %}
 {% block title %}Workout | VibeCode{% endblock %}
 {% block content %}
-<main id="workoutRoot" class="workout-layout">
-  <aside class="card workout-list-card">
+<main id="workoutRoot" class="workout-layout" data-testid="workout-root">
+  <aside class="card workout-list-card" data-testid="workout-sidebar">
     <div class="card-header">
       <h2>Scheduled Workouts</h2>
-      <button id="reloadBtn" class="btn secondary">Reload</button>
+      <button id="reloadBtn" class="btn secondary" data-testid="reload-btn">Reload</button>
     </div>
-    <p class="small-note" id="workoutMeta">Loading workouts...</p>
-    <div id="workoutList" class="workout-list"></div>
+    <p class="small-note" id="workoutMeta" data-testid="workout-meta">Loading workouts...</p>
+    <div id="workoutList" class="workout-list" data-testid="workout-list"></div>
   </aside>
 
-  <section class="card session-card">
-    <div id="planView" class="plan-view">
+  <section class="card session-card" data-testid="session-card">
+    <div id="planView" class="plan-view" data-testid="plan-view">
       <div class="plan-header">
         <div>
           <p class="plan-kicker">Plan Overview</p>
-          <h1 id="planTitle" class="plan-title">Select a workout</h1>
-          <p id="planMeta" class="plan-meta">Date: - | Rounds: - | Exercises: -</p>
-          <p id="planDescription" class="plan-description"></p>
+          <h1 id="planTitle" class="plan-title" data-testid="plan-title">Select a workout</h1>
+          <p id="planMeta" class="plan-meta" data-testid="plan-meta">Date: - | Rounds: - | Exercises: -</p>
+          <p id="planDescription" class="plan-description" data-testid="plan-description"></p>
         </div>
-        <div class="plan-estimate">
+        <div class="plan-estimate" data-testid="plan-estimate">
           <span>Estimated Duration</span>
-          <strong id="planDuration">--</strong>
+          <strong id="planDuration" data-testid="plan-duration">--</strong>
         </div>
       </div>
 
-      <div id="planExercises" class="plan-exercises"></div>
+      <div id="planExercises" class="plan-exercises" data-testid="plan-exercises"></div>
 
       <div class="controls-row">
-        <button id="startBtn" class="btn">Start Workout</button>
-        <button id="resumeFromPlanBtn" class="btn" disabled>Resume Paused Workout</button>
+        <button id="startBtn" class="btn" data-testid="start-btn">Start Workout</button>
+        <button id="resumeFromPlanBtn" class="btn" disabled data-testid="resume-from-plan-btn">Resume Paused Workout</button>
       </div>
     </div>
 
-    <div id="liveView" class="live-view">
+    <div id="liveView" class="live-view" data-testid="live-view">
       <div class="session-head">
-        <span id="phaseBadge" class="phase-badge">READY</span>
-        <span id="roundText" class="round-text">Round: -</span>
+        <span id="phaseBadge" class="phase-badge" data-testid="phase-badge">READY</span>
+        <span id="roundText" class="round-text" data-testid="round-text">Round: -</span>
       </div>
 
-      <div id="timerText" class="timer">00:00</div>
-      <h1 id="exerciseName" class="exercise-name">Select a workout to begin</h1>
-      <p id="exerciseDetail" class="exercise-detail"></p>
+      <div id="timerText" class="timer" data-testid="timer-text">00:00</div>
+      <h1 id="exerciseName" class="exercise-name" data-testid="exercise-name">Select a workout to begin</h1>
+      <p id="exerciseDetail" class="exercise-detail" data-testid="exercise-detail"></p>
 
       <div class="instructions-wrap">
         <h3>Instructions</h3>
-        <ul id="instructionList" class="instruction-list"></ul>
+        <ul id="instructionList" class="instruction-list" data-testid="instruction-list"></ul>
       </div>
 
-      <div id="nextText" class="next-text">Next: -</div>
+      <div id="nextText" class="next-text" data-testid="next-text">Next: -</div>
 
       <div class="controls-row">
-        <button id="pauseBtn" class="btn" disabled>Pause</button>
-        <button id="resumeBtn" class="btn" disabled>Resume</button>
-        <button id="backToPlanBtn" class="btn secondary" disabled>Back to Plan</button>
-        <button id="backBtn" class="btn" disabled>Back</button>
-        <button id="skipBtn" class="btn" disabled>Skip</button>
-        <button id="resetBtn" class="btn" disabled>Reset</button>
-        <button id="confirmBtn" class="btn confirm" disabled>Confirm Complete</button>
+        <button id="pauseBtn" class="btn" disabled data-testid="pause-btn">Pause</button>
+        <button id="resumeBtn" class="btn" disabled data-testid="resume-btn">Resume</button>
+        <button id="backToPlanBtn" class="btn secondary" disabled data-testid="back-to-plan-btn">Back to Plan</button>
+        <button id="backBtn" class="btn" disabled data-testid="back-btn">Back</button>
+        <button id="skipBtn" class="btn" disabled data-testid="skip-btn">Skip</button>
+        <button id="resetBtn" class="btn" disabled data-testid="reset-btn">Reset</button>
+        <button id="confirmBtn" class="btn confirm" disabled data-testid="confirm-btn">Confirm Complete</button>
       </div>
     </div>
 
-    <p id="statusMsg" class="status-msg"></p>
+    <p id="statusMsg" class="status-msg" data-testid="status-msg"></p>
   </section>
 </main>
 <script src="{{ url_for('static', filename='app.js') }}"></script>

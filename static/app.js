@@ -169,6 +169,9 @@
       const button = document.createElement("button");
       button.className = `workout-item ${idx === state.selectedIndex ? "active" : ""}`;
       button.type = "button";
+      button.dataset.testid = "workout-item";
+      button.dataset.workoutId = String(workout.id || "");
+      button.dataset.workoutDate = String(workout.date || "");
       button.addEventListener("click", () => selectWorkout(idx));
 
       const title = document.createElement("p");
@@ -529,6 +532,7 @@
     exercises.forEach((exercise, idx) => {
       const card = document.createElement("article");
       card.className = "plan-ex-item";
+      card.dataset.testid = "plan-ex-item";
 
       const head = document.createElement("div");
       head.className = "plan-ex-head";
