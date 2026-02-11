@@ -17,6 +17,7 @@ class WorkoutApp:
         self.root.title("Workout Screen")
         self.root.geometry("1100x760")
         self.root.minsize(980, 680)
+        self.root.configure(bg="#071A2E")
 
         self.config_path = config_path
         self.completed_log_path = Path(__file__).parent / "completed_workouts.json"
@@ -34,8 +35,78 @@ class WorkoutApp:
         self.timer_job: str | None = None
         self.pending_completion_confirmation = False
 
+        self._configure_styles()
         self._build_ui()
         self.load_config_file(self.config_path)
+
+    def _configure_styles(self) -> None:
+        style = ttk.Style()
+        style.theme_use("clam")
+
+        bg_main = "#071A2E"
+        bg_panel = "#0E2B4A"
+        bg_panel_alt = "#12385E"
+        text_main = "#EAF4FF"
+        text_muted = "#A7C4DE"
+        blue_accent = "#1D7FE3"
+        green_accent = "#1FC77A"
+
+        style.configure(".", background=bg_main, foreground=text_main)
+        style.configure("TFrame", background=bg_main)
+        style.configure("TLabel", background=bg_main, foreground=text_main)
+        style.configure("TLabelframe", background=bg_panel, foreground=green_accent, bordercolor=blue_accent)
+        style.configure("TLabelframe.Label", background=bg_panel, foreground=green_accent)
+
+        style.configure(
+            "TButton",
+            background=blue_accent,
+            foreground="#FFFFFF",
+            borderwidth=0,
+            focusthickness=0,
+            padding=(12, 8),
+        )
+        style.map(
+            "TButton",
+            background=[("active", green_accent), ("disabled", "#3C5673")],
+            foreground=[("disabled", "#D2DFEE")],
+        )
+
+        style.configure("TNotebook", background=bg_main, borderwidth=0)
+        style.configure(
+            "TNotebook.Tab",
+            background=bg_panel_alt,
+            foreground=text_main,
+            padding=(14, 8),
+        )
+        style.map(
+            "TNotebook.Tab",
+            background=[("selected", blue_accent), ("active", "#2494F3")],
+            foreground=[("selected", "#FFFFFF")],
+        )
+
+        style.configure(
+            "TCombobox",
+            fieldbackground=bg_panel_alt,
+            background=bg_panel_alt,
+            foreground=text_main,
+            arrowcolor=green_accent,
+        )
+
+        style.configure(
+            "Treeview",
+            background=bg_panel,
+            fieldbackground=bg_panel,
+            foreground=text_main,
+            rowheight=28,
+            bordercolor=blue_accent,
+        )
+        style.configure(
+            "Treeview.Heading",
+            background=blue_accent,
+            foreground="#FFFFFF",
+            relief="flat",
+        )
+        style.map("Treeview", background=[("selected", "#1A6AC0")], foreground=[("selected", "#FFFFFF")])
 
     def _build_ui(self) -> None:
         self.root.columnconfigure(0, weight=1)
@@ -77,9 +148,9 @@ class WorkoutApp:
 
         display = ttk.Frame(workout_tab, padding=(12, 2, 12, 10))
         display.grid(row=1, column=0, sticky="nsew")
-        display.columnconfigure(0, weight=3)
-        display.columnconfigure(1, weight=2)
-        display.rowconfigure(2, weight=1)
+        display.columnconfigure(0, weight=1)
+        display.columnconfigure(1, weight=1)
+        display.rowconfigure(5, weight=1)
 
         self.phase_var = tk.StringVar(value="Ready")
         self.timer_var = tk.StringVar(value="00:00")
@@ -96,28 +167,43 @@ class WorkoutApp:
         )
 
         ttk.Label(display, textvariable=self.timer_var, font=("Helvetica", 96, "bold")).grid(
-            row=1, column=0, sticky="w"
+            row=1, column=0, columnspan=2, sticky="n", pady=(6, 0)
         )
 
-        ttk.Label(display, textvariable=self.name_var, font=("Helvetica", 28, "bold")).grid(
-            row=2, column=0, sticky="nw", pady=(6, 0)
+        ttk.Label(display, textvariable=self.name_var, font=("Helvetica", 32, "bold"), anchor="center").grid(
+            row=2, column=0, columnspan=2, sticky="ew", pady=(10, 0)
         )
-        ttk.Label(display, textvariable=self.detail_var, font=("Helvetica", 16), wraplength=600).grid(
-            row=2, column=0, sticky="nw", pady=(58, 0)
+        ttk.Label(
+            display,
+            textvariable=self.detail_var,
+            font=("Helvetica", 16),
+            wraplength=900,
+            anchor="center",
+            justify="center",
+        ).grid(row=3, column=0, columnspan=2, sticky="ew", pady=(8, 8))
+
+        instructions_label = ttk.Label(display, text="Instructions", font=("Helvetica", 16, "bold"))
+        instructions_label.grid(row=4, column=0, columnspan=2, sticky="w", pady=(4, 4))
+
+        self.instructions = tk.Text(
+            display,
+            height=13,
+            wrap="word",
+            font=("Helvetica", 18),
+            bg="#0E2B4A",
+            fg="#EAF4FF",
+            insertbackground="#EAF4FF",
+            relief="flat",
+            highlightthickness=1,
+            highlightbackground="#1D7FE3",
+            highlightcolor="#1FC77A",
         )
-
-        side = ttk.LabelFrame(display, text="Instructions", padding=12)
-        side.grid(row=1, column=1, rowspan=2, sticky="nsew", padx=(12, 0))
-        side.columnconfigure(0, weight=1)
-        side.rowconfigure(1, weight=1)
-
-        ttk.Label(side, textvariable=self.next_var, font=("Helvetica", 14, "bold")).grid(
-            row=0, column=0, sticky="w", pady=(0, 8)
-        )
-
-        self.instructions = tk.Text(side, height=15, wrap="word", font=("Helvetica", 15))
-        self.instructions.grid(row=1, column=0, sticky="nsew")
+        self.instructions.grid(row=5, column=0, columnspan=2, sticky="nsew")
         self.instructions.configure(state="disabled")
+
+        ttk.Label(display, textvariable=self.next_var, font=("Helvetica", 15, "bold")).grid(
+            row=6, column=1, sticky="se", pady=(8, 0)
+        )
 
         actions = ttk.Frame(workout_tab, padding=(12, 0, 12, 12))
         actions.grid(row=2, column=0, sticky="ew")
@@ -131,11 +217,14 @@ class WorkoutApp:
         self.resume_btn = ttk.Button(actions, text="Resume", command=self.resume_workout, state="disabled")
         self.resume_btn.grid(row=0, column=2, padx=5)
 
+        self.back_btn = ttk.Button(actions, text="Back", command=self.back_phase, state="disabled")
+        self.back_btn.grid(row=0, column=3, padx=5)
+
         self.skip_btn = ttk.Button(actions, text="Skip", command=self.skip_phase, state="disabled")
-        self.skip_btn.grid(row=0, column=3, padx=5)
+        self.skip_btn.grid(row=0, column=4, padx=5)
 
         self.reset_btn = ttk.Button(actions, text="Reset", command=self.reset_workout, state="disabled")
-        self.reset_btn.grid(row=0, column=4, padx=5)
+        self.reset_btn.grid(row=0, column=5, padx=5)
 
         self.confirm_complete_btn = ttk.Button(
             actions,
@@ -143,7 +232,7 @@ class WorkoutApp:
             command=self.confirm_workout_complete,
             state="disabled",
         )
-        self.confirm_complete_btn.grid(row=0, column=5, padx=5)
+        self.confirm_complete_btn.grid(row=0, column=6, padx=5)
 
         history_tab.columnconfigure(0, weight=1)
         history_tab.rowconfigure(0, weight=1)
@@ -185,8 +274,8 @@ class WorkoutApp:
             raw = path.read_text(encoding="utf-8")
             loaded = json.loads(raw)
             workouts = loaded.get("workouts", [])
-            if not isinstance(workouts, list) or not workouts:
-                raise ValueError("Config must contain a non-empty 'workouts' array")
+            if not isinstance(workouts, list):
+                raise ValueError("Config must contain a 'workouts' array")
 
             for workout in workouts:
                 self._validate_workout(workout)
@@ -320,18 +409,70 @@ class WorkoutApp:
     def skip_phase(self) -> None:
         if not self.running:
             return
+        self.stop_timer()
         self.time_remaining = 0
         self._advance_phase()
 
+    def back_phase(self) -> None:
+        if not self.current_workout:
+            return
+        if not (self.running or self.paused):
+            return
+
+        self.stop_timer()
+
+        # First phase of the workout cannot go further back; restart that phase timer.
+        if self.current_phase == "work" and self.current_exercise_index == 0 and self.current_round == 1:
+            self._set_phase_time()
+        elif self.current_phase == "rest":
+            self.current_phase = "work"
+            self._set_phase_time()
+        else:
+            prev_idx, prev_round = self._previous_exercise_position()
+            self.current_exercise_index = prev_idx
+            self.current_round = prev_round
+            prev_rest = self._current_rest_seconds()
+            if prev_rest > 0:
+                self.current_phase = "rest"
+                self.time_remaining = prev_rest
+            else:
+                self.current_phase = "work"
+                self._set_phase_time()
+
+        self._render()
+        if self.running and not self.paused:
+            self._schedule_tick()
+        self._update_controls()
+
+    def _previous_exercise_position(self) -> tuple[int, int]:
+        if not self.current_workout:
+            return (0, 1)
+
+        exercises = self.current_workout["exercises"]
+        if self.current_exercise_index > 0:
+            return (self.current_exercise_index - 1, self.current_round)
+
+        if self.current_round > 1:
+            return (len(exercises) - 1, self.current_round - 1)
+
+        return (0, 1)
+
     def stop_timer(self) -> None:
         if self.timer_job:
-            self.root.after_cancel(self.timer_job)
+            try:
+                self.root.after_cancel(self.timer_job)
+            except tk.TclError:
+                pass
             self.timer_job = None
 
     def _schedule_tick(self) -> None:
+        # Ensure exactly one active scheduled callback at any time.
+        self.stop_timer()
         self.timer_job = self.root.after(1000, self._tick)
 
     def _tick(self) -> None:
+        # This callback is now consumed; a fresh one will be scheduled if needed.
+        self.timer_job = None
         if not self.running or self.paused:
             return
         self.time_remaining -= 1
@@ -593,6 +734,7 @@ class WorkoutApp:
             self.start_btn.configure(state="disabled")
             self.pause_btn.configure(state="normal")
             self.resume_btn.configure(state="disabled")
+            self.back_btn.configure(state="normal")
             self.skip_btn.configure(state="normal")
             self.reset_btn.configure(state="normal")
             self.confirm_complete_btn.configure(state="disabled")
@@ -602,6 +744,7 @@ class WorkoutApp:
             self.start_btn.configure(state="disabled")
             self.pause_btn.configure(state="disabled")
             self.resume_btn.configure(state="normal")
+            self.back_btn.configure(state="normal")
             self.skip_btn.configure(state="normal")
             self.reset_btn.configure(state="normal")
             self.confirm_complete_btn.configure(state="disabled")
@@ -610,6 +753,7 @@ class WorkoutApp:
         self.start_btn.configure(state="normal" if self.current_workout else "disabled")
         self.pause_btn.configure(state="disabled")
         self.resume_btn.configure(state="disabled")
+        self.back_btn.configure(state="disabled")
         self.skip_btn.configure(state="disabled")
         self.reset_btn.configure(state="disabled")
         self.confirm_complete_btn.configure(

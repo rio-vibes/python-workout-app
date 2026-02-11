@@ -71,7 +71,8 @@
             "Finish feeling recovered, not abruptly stopped."
           ]
         }
-      ]
+      ],
+      "date": "2026-02-11"
     },
     {
       "id": "week1_day2_strength_foundation_a",
@@ -146,7 +147,8 @@
             "Use knee-supported version when form slips."
           ]
         }
-      ]
+      ],
+      "date": "2026-02-12"
     },
     {
       "id": "week1_day3_mobility_and_stability",
@@ -214,7 +216,8 @@
             "Keep low back stable and avoid sagging."
           ]
         }
-      ]
+      ],
+      "date": "2026-02-13"
     },
     {
       "id": "week1_day4_run_walk_intervals",
@@ -318,7 +321,8 @@
             "Note any pain points for next session planning."
           ]
         }
-      ]
+      ],
+      "date": "2026-02-14"
     },
     {
       "id": "week1_day5_strength_foundation_b",
@@ -393,7 +397,8 @@
             "Stop if low back lifts off floor."
           ]
         }
-      ]
+      ],
+      "date": "2026-02-15"
     },
     {
       "id": "week1_day6_long_easy_run_progression",
@@ -449,7 +454,8 @@
             "Stay in mild stretch range without sharp pain."
           ]
         }
-      ]
+      ],
+      "date": "2026-02-16"
     }
   ]
 }

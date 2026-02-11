@@ -1,39 +1,50 @@
-# Python Workout App (GUI)
+# VibeCode Workout Web App
 
-A desktop workout timer app built with Python + Tkinter.
+Local browser-based workout app with a Python backend.
 
 ## Features
 
-- GUI workout screen with large timer and clear exercise instructions
-- Loads multiple workouts from `workouts.json`
-- Supports selecting any workout from the config
-- Shows rounds, work timers, breaks, reps, and next exercise
-- Instructions render as larger bullet points for readability
-- Plays a sound alert when phases complete (system bell)
-- Tracks completed workouts via `Confirm Complete`
-- Stores completion history in `completed_workouts.json` with Day, Date, Title
-- Dedicated `Completed Workouts` tab for workout history
+- Workout page at `/` and completed history at `/completed`
+- Session controls: start, pause, resume, back, skip, reset
+- End-of-workout `Confirm Complete`
+- Completion moves workouts from `workouts.json` to `completed_workouts.json`
+- Date-aware sorting (today first, upcoming next, older later)
 
-## Run
+## Prerequisites
+
+- Python 3.9+
+
+## Setup and Run
 
 ```bash
-cd /Users/rioneldmello/Desktop/VibeCode/python-workout-app
-python3 app.py
+git clone git@github.com:rio-vibes/python-workout-app.git
+cd python-workout-app
+python3 -m pip install -r requirements.txt
+python3 web_app.py
 ```
 
-Or:
+Open `http://127.0.0.1:8000` in your browser.
+
+## Run with Script
 
 ```bash
-cd /Users/rioneldmello/Desktop/VibeCode/python-workout-app
 ./run_workout_app.sh
 ```
 
-## Config Rules
+## Project Files
 
-Every workout in `workouts.json` must include:
+- Active workouts: `workouts.json`
+- Completed workouts: `completed_workouts.json`
+- Web server entrypoint: `web_app.py`
+- Original CLI app: `app.py`
+
+## Workout JSON Requirements
+
+Each workout object in `workouts.json` should include:
 
 - `id`
-- `title` (without day names)
+- `title`
+- `date` (`YYYY-MM-DD`)
 - `rounds`
 - `default_rest_seconds`
-- `exercises` (each with `name`, `work_seconds`, `instructions`)
+- `exercises` with `name`, `work_seconds`, and `instructions`

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Completed Workouts | VibeCode{% endblock %}
+{% block content %}
+<main class="completed-layout">
+  <section class="card completed-card">
+    <div class="card-header">
+      <h2>Completed Workouts</h2>
+      <button id="refreshCompletedBtn" class="btn secondary">Refresh</button>
+    </div>
+    <p id="completedCount" class="small-note"></p>
+    <div class="table-wrap">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Scheduled</th>
+            <th>Completed At</th>
+          </tr>
+        </thead>
+        <tbody id="completedTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script src="{{ url_for('static', filename='completed.js') }}"></script>
+{% endblock %}
